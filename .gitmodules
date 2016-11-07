@@ -1,0 +1,3 @@
+[submodule "server"]
+	path = server
+	url = https://github.com/HSR-MGE/Miniprojekt-Server.git
