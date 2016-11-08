@@ -3,4 +3,4 @@
 	url = https://github.com/HSR-MGE/Miniprojekt-Server.git
 [submodule "jar-admin"]
 	path = jar-admin
-	url = git@github.com:HSR-MGE/Miniprojekt-Admin.git
+	url = https://github.com/HSR-MGE/Miniprojekt-Admin.git
