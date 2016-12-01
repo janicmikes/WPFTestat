@@ -1,4 +1,4 @@
-# WPFTestat
+# WPFTestat ![Visual Studio Team services](https://img.shields.io/vso/build/janicmikes/2e7dab1e-4c9b-4dbf-b78b-9c9020dde9db/1.svg)
 Testat MGE WPF teil
 
 # Miniprojekt-Vorlage-WPF
