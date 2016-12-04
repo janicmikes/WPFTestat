@@ -1,0 +1,1 @@
+java -Dserver=localhost:8080 -jar gadgeothek-admin.jar
