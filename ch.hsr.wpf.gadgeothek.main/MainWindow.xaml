@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.main"
         mc:Ignorable="d"
         Title="Gadgeothek Admin" Height="600" Width="800" Icon="gadgeothek_icon.ico">
-    <DockPanel>
+    <DockPanel LastChildFill="True">
         <Menu IsMainMenu="True" DockPanel.Dock="Top">
             <MenuItem Header="_Gadgeothek">
                 <MenuItem x:Name="ConnectToServerMenuItem" Header="_Connect..." Click="ConnectToServerMenuItem_Click" />
@@ -15,8 +15,8 @@
                 <MenuItem x:Name="AboutUsMenuItem" Header="_About" Click="AboutUsMenuItem_Click" />
             </MenuItem>
         </Menu>
-        <Image x:Name="GadgeothekLogo" Source="gadgeothek_icon.ico" DockPanel.Dock="Top" Width="80" HorizontalAlignment="Right" VerticalAlignment="Top" Height="80"/>
-
+        <Image x:Name="GadgeothekLogo" Source="gadgeothek_icon.ico" DockPanel.Dock="Top" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Height="60"/>
+        
         <StatusBar DockPanel.Dock="Bottom" Height="30" VerticalAlignment="Bottom">
             <StatusBar.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -43,5 +43,14 @@
                 <ProgressBar Value="50" Width="90" Height="16" />
             </StatusBarItem>
         </StatusBar>
+        <TabControl x:Name="mainTabs">
+            <TabItem Header="Ausleihe">
+
+            </TabItem>
+
+            <TabItem Header="Gadgets">
+
+            </TabItem>
+        </TabControl>
     </DockPanel>
 </Window>
