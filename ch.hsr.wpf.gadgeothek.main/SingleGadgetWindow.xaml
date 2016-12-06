@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Gadget" Height="250" Width="400">
     <Grid>
-        <!-- LEFT
+        <!--LEFT
             <TextBlock Text="ID"/>
             <TextBlock Text="Name"/>
             <TextBlock Text="Manufacturer"/>
@@ -28,13 +28,44 @@
             </ComboBox>
         -->
         <!-- BOTTOM RIGHT -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="btnSave" Click="btnSave_Click" Margin="0,0, 10, 0">
-                <TextBlock Text="Save"/>
-            </Button>
-            <Button x:Name="btnClose" Click="btnClose_Click">
-                <TextBlock Text="Cancel"/>
-            </Button>
+
+        <StackPanel>
+            <DockPanel>
+                <Label Content="Inv Number" Width="80" DockPanel.Dock="Left" Margin="10,5" Foreground="DarkGray"/>
+                <TextBox Name="ID" Margin="10" BorderBrush="DarkGray"/>
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Name" Width="80" DockPanel.Dock="Left" Margin="10,5" Foreground="DarkGray" />
+                <TextBox Name="Name" Margin="10" BorderBrush="DarkGray" />
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Manufacturer" Width="80" DockPanel.Dock="Left" Margin="10,5" Foreground="DarkGray" />
+                <TextBox Name="Manufacturer" Margin="10" BorderBrush="DarkGray" />
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Price" Width="80" DockPanel.Dock="Left" Margin="10,5" Foreground="DarkGray" />
+                <TextBox Name="Price" Margin="10" BorderBrush="DarkGray" />
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Condition" Width="80" DockPanel.Dock="Left" Margin="10,5" Foreground="DarkGray" />
+                <ComboBox Name="Condition" Margin="10" BorderBrush="DarkGray" >
+                    <ComboBoxItem Content="NEW" />
+                    <ComboBoxItem Content="GOOD" />
+                    <ComboBoxItem Content="DAMAGE" />
+                    <ComboBoxItem Content="WASTE" />
+                    <ComboBoxItem Content="LOST" />
+                </ComboBox>
+            </DockPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="btnSave" Click="btnSave_Click" Margin="111, 5,10,5" Width="50" Padding="2"  Background="DarkGray" BorderThickness="0" BorderBrush="DarkGray" Foreground="White">
+                    <TextBlock Text="Save"/>
+                </Button>
+                <Button x:Name="btnClose" Click="btnClose_Click" Margin="5, 5,10,5" Width="50" Padding="2" Background="DarkGray" BorderThickness="0" BorderBrush="DarkGray" Foreground="White">
+                    <TextBlock Text="Cancel"/>
+                </Button>
+            </StackPanel>
         </StackPanel>
+
+
     </Grid>
 </Window>
