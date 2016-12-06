@@ -63,9 +63,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GadgetListView.xaml.cs">
+      <DependentUpon>GadgetListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ServerConnectDialog.xaml.cs">
       <DependentUpon>ServerConnectDialog.xaml</DependentUpon>
     </Compile>
+    <Page Include="GadgetListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
