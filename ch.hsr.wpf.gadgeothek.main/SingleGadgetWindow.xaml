@@ -1,0 +1,40 @@
+﻿<Window x:Class="ch.hsr.wpf.gadgeothek.main.SingleGadgetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.main"
+        mc:Ignorable="d"
+        Title="Gadget" Height="250" Width="400">
+    <Grid>
+        <!-- LEFT
+            <TextBlock Text="ID"/>
+            <TextBlock Text="Name"/>
+            <TextBlock Text="Manufacturer"/>
+            <TextBlock Text="Price"/>
+            <TextBlock Text="Condition"/>
+        -->
+        <!-- CENTER
+            <TextBlock x:Name="tbID" Text="12345" />
+            <TextBox x:Name="tbName" />
+            <TextBox x:Name="tbManufacturer" />
+            <TextBox x:Name="tbPrice" />
+            <ComboBox x:Name="cbCondition" >
+                <ComboBoxItem Content="NEW" />
+                <ComboBoxItem Content="GOOD" />
+                <ComboBoxItem Content="DAMAGE" />
+                <ComboBoxItem Content="WASTE" />
+                <ComboBoxItem Content="LOST" />
+            </ComboBox>
+        -->
+        <!-- BOTTOM RIGHT -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnSave" Click="btnSave_Click" Margin="0,0, 10, 0">
+                <TextBlock Text="Save"/>
+            </Button>
+            <Button x:Name="btnClose" Click="btnClose_Click">
+                <TextBlock Text="Cancel"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
