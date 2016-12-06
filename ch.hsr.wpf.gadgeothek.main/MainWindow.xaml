@@ -44,8 +44,8 @@
             </StatusBarItem>
         </StatusBar>
         <TabControl x:Name="mainTabs">
-            <TabItem Header="Ausleihe">
-
+            <TabItem Header="Gadgets">
+                <local:GadgetListView x:Name="Gadgets" />
             </TabItem>
 
             <TabItem Header="Gadgets">
