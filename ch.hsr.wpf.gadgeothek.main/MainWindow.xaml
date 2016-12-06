@@ -47,9 +47,8 @@
             <TabItem Header="Ausleihe">
 
             </TabItem>
-
-            <TabItem Header="Gadgets">
-
+            <TabItem Header="Loans">
+                <local:LoansView x:Name="Loans" />
             </TabItem>
         </TabControl>
     </DockPanel>
