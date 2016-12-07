@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.main"
         mc:Ignorable="d"
-        Title="Gadget" Height="250" Width="400">
+        Title="Gadget" Height="260" Width="400">
     <Grid>
         <!--LEFT
             <TextBlock Text="ID"/>
@@ -56,7 +56,7 @@
                     <ComboBoxItem Content="LOST" />
                 </ComboBox>
             </DockPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button x:Name="btnSave" Click="btnSave_Click" Margin="111, 5,10,5" Width="50" Padding="2"  Background="DarkGray" BorderThickness="0" BorderBrush="DarkGray" Foreground="White">
                     <TextBlock Text="Save"/>
                 </Button>
@@ -65,7 +65,5 @@
                 </Button>
             </StackPanel>
         </StackPanel>
-
-
     </Grid>
 </Window>

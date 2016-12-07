@@ -66,6 +66,9 @@
     <Compile Include="ServerConnectDialog.xaml.cs">
       <DependentUpon>ServerConnectDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SingleGadgetWindow.xaml.cs">
+      <DependentUpon>SingleGadgetWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,6 +84,10 @@
     <Page Include="ServerConnectDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SingleGadgetWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
