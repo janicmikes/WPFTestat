@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ch.hsr.wpf.gadgeothek.service;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -19,8 +21,8 @@ namespace ch.hsr.wpf.gadgeothek.main
     /// </summary>
     public partial class MainWindow : Window
     {
-        public String ServerUrl { get; set; } = "http://localhost:8080";
-
+        public static String ServerUrl { get; set; } = ConfigurationManager.AppSettings["server"].ToString();
+        public static LibraryAdminService _service = new LibraryAdminService(ServerUrl);
         public MainWindow()
         {  
             InitializeComponent();
@@ -36,10 +38,15 @@ namespace ch.hsr.wpf.gadgeothek.main
         {
             ServerConnectDialog serverConnectDialog = new ServerConnectDialog();
             if (serverConnectDialog.ShowDialog() == true)
-                this.ServerUrl = serverConnectDialog.Answer; 
-            StatusBarServerUrl.Text = ServerUrl; // Workaround, missing data binding
+            {
+                if (ServerUrl != serverConnectDialog.Answer)
+                {
+                    ServerUrl = serverConnectDialog.Answer;
+                    _service = new LibraryAdminService(ServerUrl);
+                }
+            }
         }
-      
+
     }
 
 }
