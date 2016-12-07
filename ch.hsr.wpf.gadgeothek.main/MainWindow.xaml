@@ -43,10 +43,11 @@
                 <ProgressBar Value="50" Width="90" Height="16" />
             </StatusBarItem>
         </StatusBar>
-        <TabControl x:Name="mainTabs">
-            <TabItem Header="Ausleihe">
+        <TabControl x:Name="MainTabs">
+            <TabItem Header="Gadgets">
 
             </TabItem>
+
             <TabItem Header="Loans">
                 <local:LoansView x:Name="Loans" />
             </TabItem>
