@@ -4,3 +4,5 @@ obj
 packages
 
 /server/node_modules
+
+*.csproj.user
