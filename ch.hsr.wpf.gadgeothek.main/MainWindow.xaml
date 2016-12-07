@@ -44,11 +44,11 @@
             </StatusBarItem>
         </StatusBar>
         <TabControl x:Name="MainTabs">
-            <TabItem Header="Ausleihe">
+            <TabItem Header="Gadgets">
 
             </TabItem>
 
-            <TabItem Header="Gadgets">
+            <TabItem Header="Loans">
 
             </TabItem>
         </TabControl>
