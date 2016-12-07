@@ -45,7 +45,7 @@
         </StatusBar>
         <TabControl x:Name="MainTabs">
             <TabItem Header="Gadgets">
-
+                <local:GadgetListView x:Name="Gadgets" />
             </TabItem>
 
             <TabItem Header="Loans">
