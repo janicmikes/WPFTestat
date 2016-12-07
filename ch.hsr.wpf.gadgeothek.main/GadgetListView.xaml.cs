@@ -72,15 +72,15 @@ namespace ch.hsr.wpf.gadgeothek.main
         private void showSingleGadget()
         {
             Console.WriteLine("show gadget: " + _currentGadget?.Name);
-            //SingleGadgetView SingleGadgetView = new SingleGadgetView(_currentGadget);
-            //if (SingleGadgetView.ShowDialog() == true)
-            //{
-            //    // TODO: Save the Gadget
-            //}
-            //else
-            //{
-            //    // edit was canceled
-            //}
+            SingleGadgetWindow SingleGadgetWindow = new SingleGadgetWindow(_currentGadget);
+            if (SingleGadgetWindow.ShowDialog() == true)
+            {
+                // TODO: Save the Gadget
+            }
+            else
+            {
+                // edit was canceled
+            }
         }
     }
 }

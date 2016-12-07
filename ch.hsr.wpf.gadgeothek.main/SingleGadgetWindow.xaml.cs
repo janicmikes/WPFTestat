@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ch.hsr.wpf.gadgeothek.domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,12 @@ namespace ch.hsr.wpf.gadgeothek.main
     /// </summary>
     public partial class SingleGadgetWindow : Window
     {
-        public SingleGadgetWindow()
+        Gadget Gadget = null;
+        public SingleGadgetWindow(Gadget gadget)
         {
             InitializeComponent();
+            Gadget = gadget;
+            DataContext = this;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
