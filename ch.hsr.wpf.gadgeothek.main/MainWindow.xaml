@@ -43,7 +43,7 @@
                 <ProgressBar Value="50" Width="90" Height="16" />
             </StatusBarItem>
         </StatusBar>
-        <TabControl x:Name="mainTabs">
+        <TabControl x:Name="MainTabs">
             <TabItem Header="Ausleihe">
 
             </TabItem>
