@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ch.hsr.wpf.gadgeothek.domain;
+using ch.hsr.wpf.gadgeothek.service;
 
 namespace ch.hsr.wpf.gadgeothek.main
 {
@@ -21,20 +22,31 @@ namespace ch.hsr.wpf.gadgeothek.main
     /// </summary>
     public partial class GadgetListView : UserControl
     {
+        public static String ServerUrl { get; set; } = "http://localhost:8080";
+
         public ObservableCollection<Gadget> AllGadgets  {get; set;}
+
+        private readonly LibraryAdminService _service = new LibraryAdminService(ServerUrl);
+
+
         public GadgetListView()
         {
             InitializeComponent();
-            InitItems();
+            PullGadgetList();
 
             DataContext = this;
         }
 
-        private void InitItems()
+        private void PullGadgetList()
         {
             AllGadgets = new ObservableCollection<Gadget>();
-            // TODO:  gadgets in liste abfuellen
+
+            foreach (var gadget in _service.GetAllGadgets())
+            {
+                AllGadgets.Add(gadget);
+            }
         }
+
 
     }
 }
