@@ -19,12 +19,12 @@ namespace ch.hsr.wpf.gadgeothek.main
     /// </summary>
     public partial class SingleGadgetWindow : Window
     {
-        Gadget Gadget = null;
+        private Gadget CurrentGadget { get; set; }
         public SingleGadgetWindow(Gadget gadget)
         {
             InitializeComponent();
-            Gadget = gadget;
-            DataContext = this;
+            CurrentGadget = gadget;
+            DataContext = CurrentGadget;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)

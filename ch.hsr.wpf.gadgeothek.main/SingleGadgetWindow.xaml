@@ -8,28 +8,47 @@
         Title="Gadget"
         SizeToContent="WidthAndHeight" 
         WindowStartupLocation="CenterScreen"
-        MinWidth="400">
+        MinWidth="400" MinHeight="260" d:DesignHeight="676.356">
+    
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="10,5" />
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="DockPanel.Dock" Value="Left" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5, 5,10,5" />
+            <Setter Property="Width" Value="80" />
+            <Setter Property="Padding" Value="2" />
+        </Style>
+    </Window.Resources>
 
     <StackPanel>
         <DockPanel>
-            <Label Content="Inv Number" Width="80" DockPanel.Dock="Left" Margin="10,5" />
-            <TextBox Name="ID" Margin="10" />
+            <Label Content="Inv Number" />
+            <TextBox Name="ID" Text="{Binding InventoryNumber}" />
         </DockPanel>
         <DockPanel>
-            <Label Content="Name" Width="80" DockPanel.Dock="Left" Margin="10,5" />
-            <TextBox Name="Name" Margin="10"  />
+            <Label Content="Name" />
+            <TextBox Name="Name" Text="{Binding Name}" />
         </DockPanel>
         <DockPanel>
-            <Label Content="Manufacturer" Width="80" DockPanel.Dock="Left" Margin="10,5" />
-            <TextBox Name="Manufacturer" Margin="10"  />
+            <Label Content="Manufacturer" />
+            <TextBox Name="Manufacturer" Margin="10" Text="{Binding Manufacturer}" />
         </DockPanel>
         <DockPanel>
-            <Label Content="Price" Width="80" DockPanel.Dock="Left" Margin="10,5" />
-            <TextBox Name="Price" Margin="10"  Text="{Binding Gadget.Price}" />
+            <Label Content="Price" />
+            <TextBox Name="Price" Text="{Binding Price}" />
         </DockPanel>
         <DockPanel>
-            <Label Content="Condition" Width="80" DockPanel.Dock="Left" Margin="10,5" />
-            <ComboBox Name="Condition" Margin="10"  >
+            <Label Content="Condition" />
+            <ComboBox Name="Condition">
                 <ComboBoxItem Content="NEW" />
                 <ComboBoxItem Content="GOOD" />
                 <ComboBoxItem Content="DAMAGE" />
@@ -38,10 +57,10 @@
             </ComboBox>
         </DockPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="btnSave" Click="btnSave_Click" Margin="111, 5,10,5" Width="80" Padding="2" >
+            <Button x:Name="btnSave" Click="btnSave_Click"  >
                 <TextBlock Text="Save"/>
             </Button>
-            <Button x:Name="btnClose" Click="btnClose_Click" Margin="5, 5,10,5" Width="80" >
+            <Button x:Name="btnClose" Click="btnClose_Click" >
                 <TextBlock Text="Cancel"/>
             </Button>
         </StackPanel>
