@@ -69,7 +69,7 @@
     </Compile>
     <Compile Include="ServerConnectDialog.xaml.cs">
       <DependentUpon>ServerConnectDialog.xaml</DependentUpon>
-    </Compile
+    </Compile>
     <Compile Include="SingleGadgetWindow.xaml.cs">
       <DependentUpon>SingleGadgetWindow.xaml</DependentUpon>
     </Compile>
