@@ -25,7 +25,7 @@ namespace ch.hsr.wpf.gadgeothek.main
     {
         //public static String ServerUrl { get; set; } = ConfigurationManager.AppSettings["server"].ToString();
 
-        public ObservableCollection<Gadget> AllGadgets  {get; set;}
+        public static ObservableCollection<Gadget> AllGadgets  {get; set;}
 
         private Gadget _currentGadget;
         //private readonly LibraryAdminService _service = new LibraryAdminService(ServerUrl);

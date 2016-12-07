@@ -32,7 +32,7 @@
     <StackPanel>
         <DockPanel>
             <Label Content="Inv Number" />
-            <TextBox Name="ID" Text="{Binding InventoryNumber}" />
+            <TextBox Name="ID" PreviewTextInput="NumberIntValidationTextBox" Text="{Binding InventoryNumber}" />
         </DockPanel>
         <DockPanel>
             <Label Content="Name" />
@@ -44,7 +44,7 @@
         </DockPanel>
         <DockPanel>
             <Label Content="Price" />
-            <TextBox Name="Price" Text="{Binding Price}" />
+            <TextBox Name="Price" PreviewTextInput="NumberDoubleValidationTextBox" Text="{Binding Price}" />
         </DockPanel>
         <DockPanel>
             <Label Content="Condition" />
