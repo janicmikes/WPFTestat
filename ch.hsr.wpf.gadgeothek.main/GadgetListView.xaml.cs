@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
 using ch.hsr.wpf.gadgeothek.domain;
 using ch.hsr.wpf.gadgeothek.service;
 
@@ -22,11 +23,12 @@ namespace ch.hsr.wpf.gadgeothek.main
     /// </summary>
     public partial class GadgetListView : UserControl
     {
-        public static String ServerUrl { get; set; } = "http://localhost:8080";
+        //public static String ServerUrl { get; set; } = ConfigurationManager.AppSettings["server"].ToString();
 
         public ObservableCollection<Gadget> AllGadgets  {get; set;}
 
-        private readonly LibraryAdminService _service = new LibraryAdminService(ServerUrl);
+        private Gadget _currentGadget;
+        //private readonly LibraryAdminService _service = new LibraryAdminService(ServerUrl);
 
 
         public GadgetListView()
@@ -37,16 +39,48 @@ namespace ch.hsr.wpf.gadgeothek.main
             DataContext = this;
         }
 
-        private void PullGadgetList()
+        
+        public void PullGadgetList()
         {
             AllGadgets = new ObservableCollection<Gadget>();
 
-            foreach (var gadget in _service.GetAllGadgets())
+            foreach (var gadget in MainWindow._service.GetAllGadgets())
             {
                 AllGadgets.Add(gadget);
             }
+
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("start with a new Gadget");
+            _currentGadget = null;
+            showSingleGadget();
+        }
 
+        private void dataGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _currentGadget = (Gadget)((DataGrid)sender).SelectedItem;
+        }
+
+        private void editGadget(object sender, MouseButtonEventArgs e)
+        {
+            _currentGadget = (Gadget)((DataGrid)sender).SelectedItem;
+            showSingleGadget();
+        }
+
+        private void showSingleGadget()
+        {
+            Console.WriteLine("show gadget: " + _currentGadget?.Name);
+            //SingleGadgetView SingleGadgetView = new SingleGadgetView(_currentGadget);
+            //if (SingleGadgetView.ShowDialog() == true)
+            //{
+            //    // TODO: Save the Gadget
+            //}
+            //else
+            //{
+            //    // edit was canceled
+            //}
+        }
     }
 }
