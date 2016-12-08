@@ -31,6 +31,16 @@ namespace ch.hsr.wpf.gadgeothek.main
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                double parsedPrice = Double.Parse(Price.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid Price");
+                return;
+            }
+
             Gadget gadget = new Gadget
             {
                 InventoryNumber = ID.Text,
@@ -47,7 +57,7 @@ namespace ch.hsr.wpf.gadgeothek.main
                 throw new Exception("Gadget couldn't be updated");
             }
             GadgetListView.PullGadgetList();
-           
+            this.Close();
         }
 
         private void NumberDoubleValidationTextBox(object sender, TextCompositionEventArgs e)
