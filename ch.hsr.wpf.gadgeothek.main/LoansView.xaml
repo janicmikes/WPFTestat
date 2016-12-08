@@ -3,10 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.main"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Background="White">
-        <TextBlock Text="Hello Loans"></TextBlock>
-    </Grid>
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.main" d:DesignWidth="351.182" d:DesignHeight="183.171">
+    <DockPanel LastChildFill="True">
+        <DataGrid x:Name="dataGridView" 
+                  ItemsSource="{Binding AllLoans}" 
+                  ScrollViewer.CanContentScroll="True" 
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  HorizontalContentAlignment="Stretch"
+                  IsReadOnly="True" 
+                  SelectionMode="Single"/>
+
+    </DockPanel>
 </UserControl>

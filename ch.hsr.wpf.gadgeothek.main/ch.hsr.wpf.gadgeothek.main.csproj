@@ -67,6 +67,9 @@
     <Compile Include="GadgetListView.xaml.cs">
       <DependentUpon>GadgetListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoansView.xaml.cs">
+      <DependentUpon>LoansView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ServerConnectDialog.xaml.cs">
       <DependentUpon>ServerConnectDialog.xaml</DependentUpon>
     </Compile>
@@ -74,8 +77,13 @@
       <DependentUpon>SingleGadgetWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\GadgeothekApp.cs" />
+    <Compile Include="ViewModel\LoansViewModel.cs" />
     <Compile Include="ViewModel\GadgetListViewModel.cs" />
     <Page Include="GadgetListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoansView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

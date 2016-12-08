@@ -49,7 +49,7 @@
             </TabItem>
 
             <TabItem Header="Loans">
-                <local:LoansView x:Name="Loans" />
+                <local:LoansView x:Name="LoansView" />
             </TabItem>
         </TabControl>
     </DockPanel>

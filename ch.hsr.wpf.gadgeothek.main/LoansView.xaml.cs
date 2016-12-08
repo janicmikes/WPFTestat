@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ch.hsr.wpf.gadgeothek.main.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace ch.hsr.wpf.gadgeothek.main
     /// </summary>
     public partial class LoansView : UserControl
     {
+        public LoansViewModel LoansViewModel;
         public LoansView()
         {
             InitializeComponent();
+            LoansViewModel = new LoansViewModel();
+            DataContext = LoansViewModel;
         }
     }
 }
