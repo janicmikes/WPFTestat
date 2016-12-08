@@ -25,7 +25,15 @@ namespace ch.hsr.wpf.gadgeothek.main
         public SingleGadgetWindow(Gadget gadget)
         {
             InitializeComponent();
-            CurrentGadget = gadget;
+            // copy the gadget
+            CurrentGadget = new Gadget
+            {
+                InventoryNumber = gadget.InventoryNumber,
+                Name = gadget.Name,
+                Price = gadget.Price,
+                Condition = gadget.Condition,
+                Manufacturer = gadget.Manufacturer
+            };
             DataContext = CurrentGadget;
         }
 
@@ -46,8 +54,7 @@ namespace ch.hsr.wpf.gadgeothek.main
                 InventoryNumber = ID.Text,
                 Name = Name.Text,
                 Price = Double.Parse(Price.Text),
-                // TODO: Kommentierter Code ergibt noch eine Exception
-                //Condition = (Condition) Condition.SelectedItem,
+                Condition = (Condition) Condition.SelectedItem,
                 Manufacturer = Manufacturer.Text
             };
             

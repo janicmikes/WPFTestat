@@ -10,7 +10,7 @@
         Title="Gadget"
         SizeToContent="WidthAndHeight" 
         WindowStartupLocation="CenterScreen"
-        MinWidth="400" MinHeight="260" d:DesignHeight="676.356">
+        MinWidth="400" MinHeight="260" Icon="gadgeothek_icon.ico" d:DesignHeight="300.356">
     
     <Window.Resources>
         <Style TargetType="Label">
@@ -58,7 +58,7 @@
             <Label Content="Condition" />
             <ComboBox Name="Condition" 
                       ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
-                      SelectedItem="{Binding Path=Condition}">
+                      SelectedItem="{Binding Condition}">
             </ComboBox>
         </DockPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
