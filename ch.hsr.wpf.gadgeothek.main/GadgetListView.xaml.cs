@@ -40,7 +40,7 @@ namespace ch.hsr.wpf.gadgeothek.main
         }
 
         
-        public void PullGadgetList()
+        public static void PullGadgetList()
         {
             AllGadgets = new ObservableCollection<Gadget>();
 

@@ -40,12 +40,13 @@ namespace ch.hsr.wpf.gadgeothek.main
                 //Condition = (Condition) Condition.SelectedItem,
                 Manufacturer = Manufacturer.Text
             };
-            GadgetListView.AllGadgets.Add(gadget);
-            bool updateFaild = MainWindow._service.UpdateGadget(gadget);
-            if (updateFaild)
+            
+            bool updateSuccess = MainWindow._service.UpdateGadget(gadget);
+            if (!updateSuccess)
             {
                 throw new Exception("Gadget couldn't be updated");
             }
+            GadgetListView.PullGadgetList();
            
         }
 
