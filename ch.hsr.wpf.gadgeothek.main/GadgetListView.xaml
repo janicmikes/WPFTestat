@@ -19,7 +19,7 @@
                   IsReadOnly="True" 
                   SelectionMode="Single"
                   SelectionChanged="dataGridView_SelectionChanged" 
-                  MouseDoubleClick="editGadget" />
+                  MouseDoubleClick="EditGadget" />
 
     </DockPanel>
 </UserControl>

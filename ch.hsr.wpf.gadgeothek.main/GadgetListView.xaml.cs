@@ -25,7 +25,7 @@ namespace ch.hsr.wpf.gadgeothek.main
     {
         //public static String ServerUrl { get; set; } = ConfigurationManager.AppSettings["server"].ToString();
 
-        public ObservableCollection<Gadget> AllGadgets  {get; set;}
+        public static ObservableCollection<Gadget> AllGadgets  {get; set;}
 
         private Gadget _currentGadget;
         //private readonly LibraryAdminService _service = new LibraryAdminService(ServerUrl);
@@ -40,7 +40,7 @@ namespace ch.hsr.wpf.gadgeothek.main
         }
 
         
-        public void PullGadgetList()
+        public static void PullGadgetList()
         {
             AllGadgets = new ObservableCollection<Gadget>();
 
@@ -55,7 +55,7 @@ namespace ch.hsr.wpf.gadgeothek.main
         {
             Console.WriteLine("start with a new Gadget");
             _currentGadget = null;
-            showSingleGadget();
+            ShowSingleGadget();
         }
 
         private void dataGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -63,24 +63,24 @@ namespace ch.hsr.wpf.gadgeothek.main
             _currentGadget = (Gadget)((DataGrid)sender).SelectedItem;
         }
 
-        private void editGadget(object sender, MouseButtonEventArgs e)
+        private void EditGadget(object sender, MouseButtonEventArgs e)
         {
             _currentGadget = (Gadget)((DataGrid)sender).SelectedItem;
-            showSingleGadget();
+            ShowSingleGadget();
         }
 
-        private void showSingleGadget()
+        private void ShowSingleGadget()
         {
             Console.WriteLine("show gadget: " + _currentGadget?.Name);
-            //SingleGadgetView SingleGadgetView = new SingleGadgetView(_currentGadget);
-            //if (SingleGadgetView.ShowDialog() == true)
-            //{
-            //    // TODO: Save the Gadget
-            //}
-            //else
-            //{
-            //    // edit was canceled
-            //}
+            SingleGadgetWindow SingleGadgetWindow = new SingleGadgetWindow(_currentGadget);
+            if (SingleGadgetWindow.ShowDialog() == true)
+            {
+                // TODO: Save the Gadget
+            }
+            else
+            {
+                // edit was canceled
+            }
         }
     }
 }
