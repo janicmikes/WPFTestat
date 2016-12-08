@@ -48,6 +48,7 @@
         </DockPanel>
         <DockPanel>
             <Label Content="Condition" />
+            <!-- TODO with itemsource -->
             <ComboBox Name="Condition">
                 <ComboBoxItem Content="NEW" />
                 <ComboBoxItem Content="GOOD" />
