@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.main"
+        xmlns:domain="clr-namespace:ch.hsr.wpf.gadgeothek.domain;assembly=ch.hsr.wpf.gadgeothek"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Gadget"
         SizeToContent="WidthAndHeight" 
@@ -27,6 +29,12 @@
             <Setter Property="Width" Value="80" />
             <Setter Property="Padding" Value="2" />
         </Style>
+        <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="domain:Condition"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </Window.Resources>
 
     <StackPanel>
@@ -48,13 +56,9 @@
         </DockPanel>
         <DockPanel>
             <Label Content="Condition" />
-            <!-- TODO with itemsource -->
-            <ComboBox Name="Condition">
-                <ComboBoxItem Content="NEW" />
-                <ComboBoxItem Content="GOOD" />
-                <ComboBoxItem Content="DAMAGE" />
-                <ComboBoxItem Content="WASTE" />
-                <ComboBoxItem Content="LOST" />
+            <ComboBox Name="Condition" 
+                      ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
+                      SelectedItem="{Binding Path=Condition}">
             </ComboBox>
         </DockPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
