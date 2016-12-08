@@ -1,4 +1,5 @@
-﻿using ch.hsr.wpf.gadgeothek.service;
+﻿using ch.hsr.wpf.gadgeothek.main.ViewModel;
+using ch.hsr.wpf.gadgeothek.service;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -21,11 +22,19 @@ namespace ch.hsr.wpf.gadgeothek.main
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static String ServerUrl { get; set; } = ConfigurationManager.AppSettings["server"].ToString();
-        public static LibraryAdminService _service = new LibraryAdminService(ServerUrl);
+
+        // Controller
+        public GadgeothekApp GadgeothekApp = new GadgeothekApp();
+
         public MainWindow()
         {  
             InitializeComponent();
+            this.DataContext = GadgeothekApp;
+
+            GadgeothekApp.GadgetListViewModel = GadgetListView.GadgetListViewModel;
+            GadgetListView.GadgetListViewModel.GadgeothekApp = GadgeothekApp;
+            GadgetListView.GadgetListViewModel.PullGadgetList();
+
         }
 
         private void AboutUsMenuItem_Click(object sender, RoutedEventArgs e)
@@ -39,10 +48,10 @@ namespace ch.hsr.wpf.gadgeothek.main
             ServerConnectDialog serverConnectDialog = new ServerConnectDialog();
             if (serverConnectDialog.ShowDialog() == true)
             {
-                if (ServerUrl != serverConnectDialog.Answer)
+                if (GadgeothekApp.ServerUrl != serverConnectDialog.Answer)
                 {
-                    ServerUrl = serverConnectDialog.Answer;
-                    _service = new LibraryAdminService(ServerUrl);
+                    GadgeothekApp.ServerUrl = serverConnectDialog.Answer;
+                    GadgeothekApp.Service = new LibraryAdminService(GadgeothekApp.ServerUrl);
                 }
             }
         }

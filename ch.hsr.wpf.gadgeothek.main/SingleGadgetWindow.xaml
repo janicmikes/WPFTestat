@@ -62,7 +62,7 @@
             </ComboBox>
         </DockPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="btnSave" IsEnabled="True" Click="btnSave_Click"  >
+            <Button x:Name="btnSave" IsDefault="True" Click="btnSave_Click"  >
                 <TextBlock Text="Save"/>
             </Button>
             <Button x:Name="btnClose" IsCancel="True" >

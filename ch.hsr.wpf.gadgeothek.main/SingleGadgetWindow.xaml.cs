@@ -21,20 +21,11 @@ namespace ch.hsr.wpf.gadgeothek.main
     /// </summary>
     public partial class SingleGadgetWindow : Window
     {
-        private Gadget CurrentGadget { get; set; }
+        //private Gadget CurrentGadget { get; set; }
         public SingleGadgetWindow(Gadget gadget)
         {
             InitializeComponent();
-            // copy the gadget
-            CurrentGadget = new Gadget
-            {
-                InventoryNumber = gadget.InventoryNumber,
-                Name = gadget.Name,
-                Price = gadget.Price,
-                Condition = gadget.Condition,
-                Manufacturer = gadget.Manufacturer
-            };
-            DataContext = CurrentGadget;
+            DataContext = gadget;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -42,6 +33,7 @@ namespace ch.hsr.wpf.gadgeothek.main
             try
             {
                 double parsedPrice = Double.Parse(Price.Text);
+                // Todo further Validations;
             }
             catch
             {
@@ -49,22 +41,7 @@ namespace ch.hsr.wpf.gadgeothek.main
                 return;
             }
 
-            Gadget gadget = new Gadget
-            {
-                InventoryNumber = ID.Text,
-                Name = Name.Text,
-                Price = Double.Parse(Price.Text),
-                Condition = (Condition) Condition.SelectedItem,
-                Manufacturer = Manufacturer.Text
-            };
-            
-            bool updateSuccess = MainWindow._service.UpdateGadget(gadget);
-            if (!updateSuccess)
-            {
-                throw new Exception("Gadget couldn't be updated");
-            }
-            GadgetListView.PullGadgetList();
-            this.Close();
+            DialogResult = true;
         }
 
         private void NumberDoubleValidationTextBox(object sender, TextCompositionEventArgs e)

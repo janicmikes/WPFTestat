@@ -73,6 +73,8 @@
     <Compile Include="SingleGadgetWindow.xaml.cs">
       <DependentUpon>SingleGadgetWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\GadgeothekApp.cs" />
+    <Compile Include="ViewModel\GadgetListViewModel.cs" />
     <Page Include="GadgetListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -18,8 +18,7 @@
                   HorizontalContentAlignment="Stretch"
                   IsReadOnly="True" 
                   SelectionMode="Single"
-                  SelectionChanged="dataGridView_SelectionChanged" 
-                  MouseDoubleClick="EditGadget" />
+                  MouseDoubleClick="MouseDoubleClickHandler" />
 
     </DockPanel>
 </UserControl>
