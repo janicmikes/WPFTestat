@@ -55,7 +55,7 @@ namespace ch.hsr.wpf.gadgeothek.main
         {
             Console.WriteLine("start with a new Gadget");
             _currentGadget = null;
-            showSingleGadget();
+            ShowSingleGadget();
         }
 
         private void dataGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -63,13 +63,13 @@ namespace ch.hsr.wpf.gadgeothek.main
             _currentGadget = (Gadget)((DataGrid)sender).SelectedItem;
         }
 
-        private void editGadget(object sender, MouseButtonEventArgs e)
+        private void EditGadget(object sender, MouseButtonEventArgs e)
         {
             _currentGadget = (Gadget)((DataGrid)sender).SelectedItem;
-            showSingleGadget();
+            ShowSingleGadget();
         }
 
-        private void showSingleGadget()
+        private void ShowSingleGadget()
         {
             Console.WriteLine("show gadget: " + _currentGadget?.Name);
             SingleGadgetWindow SingleGadgetWindow = new SingleGadgetWindow(_currentGadget);
