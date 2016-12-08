@@ -49,11 +49,6 @@ namespace ch.hsr.wpf.gadgeothek.main
            
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void NumberDoubleValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             // TODO Regex should allow only one dot
