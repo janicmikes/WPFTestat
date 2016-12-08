@@ -51,14 +51,13 @@ namespace ch.hsr.wpf.gadgeothek.main
 
         private void NumberDoubleValidationTextBox(object sender, TextCompositionEventArgs e)
         {
-            // TODO Regex should allow only one dot
-            Regex regex = new Regex(@"^[0-9]*(?:\.[0-9]*)?$");
+            Regex regex = new Regex(@"\d|\.");
             e.Handled = !regex.IsMatch(e.Text);
         }
 
         private void NumberIntValidationTextBox(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[0-9]+");
+            Regex regex = new Regex(@"\d");
             e.Handled = !regex.IsMatch(e.Text);
         }
     }
