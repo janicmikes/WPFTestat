@@ -80,11 +80,7 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
                     }
                     else
                     {
-                        if (!GadgeothekApp.Service.DeleteGadget(gadget))
-                        {
-                            throw new Exception("Update Gadget Failed!");
-
-                        }
+                        throw new Exception("Update Gadget Failed!");
                     }
                 }
                 editableGadget = null;
