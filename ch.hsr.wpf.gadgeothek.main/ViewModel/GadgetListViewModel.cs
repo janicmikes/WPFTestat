@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
+
 
 namespace ch.hsr.wpf.gadgeothek.main.ViewModel
 {
@@ -110,15 +113,19 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
 
         public void DeleteGadget(Gadget gadget)
         {
-            try
+            DialogResult dialogResult = MessageBox.Show("delete the gadget:  " + gadget.Name, "Delete Gadget", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                GadgeothekApp.Service.DeleteGadget(gadget);
-                OnPropertyChanged(nameof(AllGadgets));
-                PullGadgetList();
-            }
-            catch (Exception)
-            {
-                throw new Exception("deleting gadget failded!");
+                try
+                {
+                    GadgeothekApp.Service.DeleteGadget(gadget);
+                    OnPropertyChanged(nameof(AllGadgets));
+                    PullGadgetList();
+                }
+                catch (Exception)
+                {
+                    throw new Exception("deleting gadget failded!");
+                }
             }
         }
     }

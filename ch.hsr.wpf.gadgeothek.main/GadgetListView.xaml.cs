@@ -53,6 +53,8 @@ namespace ch.hsr.wpf.gadgeothek.main
                 return;
             }
             GadgetListViewModel.DeleteGadget(_currentGadget);
+
+            _currentGadget = null;
         }
 
         private void MouseDoubleClickHandler(object sender, MouseButtonEventArgs e)
