@@ -40,7 +40,7 @@ namespace ch.hsr.wpf.gadgeothek.main
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonAddNewGadget_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("start with a new Gadget");
             GadgetListViewModel.ShowSingleGadget(null);
