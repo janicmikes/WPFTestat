@@ -13,21 +13,34 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
     {
 
         public GadgeothekApp GadgeothekApp;
+        private ObservableCollection<Loan> AllLoans { get; set; } = new ObservableCollection<Loan>();
 
         public LoansViewModel()
         {
-
+            UpdateLoanTimer(UpdateLoanTimerOnTick);
         }
 
-        public ObservableCollection<Loan> AllLoans { get; set; } = new ObservableCollection<Loan>();
-       
+        private void UpdateLoanTimer(EventHandler updateLoanTimerOnTick)
+        {
+            System.Windows.Threading.DispatcherTimer updateLoanTimer = new System.Windows.Threading.DispatcherTimer();
+            updateLoanTimer.Tick += updateLoanTimerOnTick;
+            updateLoanTimer.Interval = new TimeSpan(0, 0, 5);
+            updateLoanTimer.Start();
+        }
 
-        public void PullLoansList()
+
+        private void UpdateLoanTimerOnTick(object sender, EventArgs e)
         {
             AllLoans.Clear();
-            foreach (var loan in GadgeothekApp.GetAllLoans())
+            PullLoansList();
+        }
+
+        private void PullLoansList()
+        {
+            var allLoans = GadgeothekApp.GetAllLoans();
+            foreach (var loan in allLoans)
             {
-                AllLoans.Add(loan);
+                allLoans.Add(loan);
             }
         }
     }
