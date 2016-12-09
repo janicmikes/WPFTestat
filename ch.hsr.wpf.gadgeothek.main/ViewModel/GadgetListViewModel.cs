@@ -50,61 +50,68 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
 
         public void ShowSingleGadget(Gadget gadget)
         {
-            // edit gadget
             if (gadget != null)
             {
-                // copy the gadget
-                Gadget editableGadget = new Gadget
-                {
-                    InventoryNumber = gadget.InventoryNumber,
-                    Name = gadget.Name,
-                    Price = gadget.Price,
-                    Condition = gadget.Condition,
-                    Manufacturer = gadget.Manufacturer
-                };
-
-                // copy back
-                SingleGadgetWindow singleGadgetWindow = new SingleGadgetWindow(editableGadget);
-                if (singleGadgetWindow.ShowDialog() == true)
-                {
-                    gadget.InventoryNumber = editableGadget.InventoryNumber;
-                    gadget.Name = editableGadget.Name;
-                    gadget.Price = editableGadget.Price;
-                    gadget.Condition = editableGadget.Condition;
-                    gadget.Manufacturer = editableGadget.Manufacturer;
-
-                    if (GadgeothekApp.Service.UpdateGadget(gadget))
-                    {
-                        OnPropertyChanged(nameof(AllGadgets));
-                        PullGadgetList();
-                    }
-                    else
-                    {
-                        throw new Exception("Update Gadget Failed!");
-                    }
-                }
-                editableGadget = null;
-
+                EditGadget(gadget);
             }
 
-            // add new gadget
             else
             {
-                gadget = new Gadget();
-                SingleGadgetWindow singleGadgetWindow = new SingleGadgetWindow(gadget);
-                if (singleGadgetWindow.ShowDialog() == true)
+                AddNewGadget();
+            }
+        }
+
+        private void AddNewGadget()
+        {
+            Gadget gadget = new Gadget();
+            SingleGadgetWindow singleGadgetWindow = new SingleGadgetWindow(gadget);
+            if (singleGadgetWindow.ShowDialog() == true)
+            {
+                if (GadgeothekApp.Service.AddGadget(gadget))
                 {
-                    if (GadgeothekApp.Service.AddGadget(gadget))
-                    {
-                        OnPropertyChanged(nameof(AllGadgets));
-                        PullGadgetList();
-                    }
-                    else
-                    {
-                        throw new Exception("Add Gadget Failed!");
-                    }
+                    OnPropertyChanged(nameof(AllGadgets));
+                    PullGadgetList();
+                }
+                else
+                {
+                    throw new Exception("Add Gadget Failed!");
                 }
             }
+        }
+
+        private void EditGadget(Gadget gadget)
+        {
+            // copy the gadget
+            Gadget editableGadget = new Gadget
+            {
+                InventoryNumber = gadget.InventoryNumber,
+                Name = gadget.Name,
+                Price = gadget.Price,
+                Condition = gadget.Condition,
+                Manufacturer = gadget.Manufacturer
+            };
+
+            // copy back
+            SingleGadgetWindow singleGadgetWindow = new SingleGadgetWindow(editableGadget);
+            if (singleGadgetWindow.ShowDialog() == true)
+            {
+                gadget.InventoryNumber = editableGadget.InventoryNumber;
+                gadget.Name = editableGadget.Name;
+                gadget.Price = editableGadget.Price;
+                gadget.Condition = editableGadget.Condition;
+                gadget.Manufacturer = editableGadget.Manufacturer;
+
+                if (GadgeothekApp.Service.UpdateGadget(gadget))
+                {
+                    OnPropertyChanged(nameof(AllGadgets));
+                    PullGadgetList();
+                }
+                else
+                {
+                    throw new Exception("Update Gadget Failed!");
+                }
+            }
+            editableGadget = null;
         }
     }
 }
