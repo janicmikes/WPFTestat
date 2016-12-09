@@ -13,11 +13,11 @@
             <Setter Property="Padding" Value="2" />
         </Style>
     </UserControl.Resources>
-    
+
     <DockPanel LastChildFill="True">
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
             <Button  Click="ButtonAddNewGadget_Click" Content="Add new Gadget" />
-            <Button  Click="ButtonAddNewGadget_Click" Content="Delete selected Gadget" />
+            <Button  Click="ButtonDeleteGadget_Click" Content="Delete selected Gadget" />
         </StackPanel>
 
         <DataGrid x:Name="dataGridView" 
@@ -28,7 +28,9 @@
                   HorizontalContentAlignment="Stretch"
                   IsReadOnly="True" 
                   SelectionMode="Single"
-                  MouseDoubleClick="MouseDoubleClickHandler" />
+                  MouseDoubleClick="MouseDoubleClickHandler" 
+                  MouseDown="SaveCurrentGadgetHandler"
+                 />
 
     </DockPanel>
 </UserControl>

@@ -45,12 +45,25 @@ namespace ch.hsr.wpf.gadgeothek.main
             Console.WriteLine("start with a new Gadget");
             GadgetListViewModel.ShowSingleGadget(null);
         }
+        private void ButtonDeleteGadget_Click(object sender, RoutedEventArgs e)
+        {
+            if (_currentGadget == null)
+            {
+                MessageBox.Show("Please first select a gadget");
+                return;
+            }
+            GadgetListViewModel.DeleteGadget(_currentGadget);
+        }
 
         private void MouseDoubleClickHandler(object sender, MouseButtonEventArgs e)
         {
             GadgetListViewModel.ShowSingleGadget((Gadget)((DataGrid)sender).SelectedItem);
         }
 
-       
+
+        private void SaveCurrentGadgetHandler(object sender, RoutedEventArgs e)
+        {
+            _currentGadget = (Gadget) ((DataGrid) sender).SelectedItem;
+        }
     }
 }

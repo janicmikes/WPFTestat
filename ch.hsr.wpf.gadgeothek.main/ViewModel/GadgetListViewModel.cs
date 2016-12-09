@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ch.hsr.wpf.gadgeothek.main.ViewModel
 {
@@ -104,6 +105,20 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
                         throw new Exception("Add Gadget Failed!");
                     }
                 }
+            }
+        }
+
+        public void DeleteGadget(Gadget gadget)
+        {
+            try
+            {
+                GadgeothekApp.Service.DeleteGadget(gadget);
+                OnPropertyChanged(nameof(AllGadgets));
+                PullGadgetList();
+            }
+            catch (Exception)
+            {
+                throw new Exception("deleting gadget failded!");
             }
         }
     }
