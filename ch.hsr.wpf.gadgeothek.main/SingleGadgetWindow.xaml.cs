@@ -30,10 +30,15 @@ namespace ch.hsr.wpf.gadgeothek.main
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            // Input Validation
             try
             {
-                double parsedPrice = Double.Parse(Price.Text);
-                // Todo further Validations;
+                double parsedPrice = double.Parse(Price.Text);
+                if (ID.Text == string.Empty || Name.Text == string.Empty || Manufacturer.Text == string.Empty)
+                {
+                    MessageBox.Show("Please fill all fields");
+                    return;
+                }
             }
             catch
             {
