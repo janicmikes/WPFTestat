@@ -37,11 +37,11 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
 
         private void PullLoansList()
         {
-            var allLoans = GadgeothekApp.GetAllLoans();
+          /*  var allLoans = GadgeothekApp.GetAllLoans();
             foreach (var loan in allLoans)
             {
                 allLoans.Add(loan);
-            }
+            }*/
         }
     }
 }

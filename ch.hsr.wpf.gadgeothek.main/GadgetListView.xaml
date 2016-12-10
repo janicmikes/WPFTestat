@@ -5,19 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
              xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.main" d:DesignWidth="351.182" d:DesignHeight="183.171">
-
-    <UserControl.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="5, 5,10,5" />
-            <Setter Property="Width" Value="133" />
-            <Setter Property="Padding" Value="2" />
-        </Style>
-    </UserControl.Resources>
-
     <DockPanel LastChildFill="True">
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-            <Button  Click="ButtonAddNewGadget_Click" Content="Add new Gadget" />
-            <Button  Click="ButtonDeleteGadget_Click" Content="Delete selected Gadget" />
+            <Button Click="ButtonAddNewGadget_Click" Content="Add new Gadget" />
+            <Button Click="ButtonDeleteGadget_Click" Content="Delete Gadget" />
         </StackPanel>
 
         <DataGrid x:Name="dataGridView" 
@@ -28,9 +19,7 @@
                   HorizontalContentAlignment="Stretch"
                   IsReadOnly="True" 
                   SelectionMode="Single"
-                  MouseDoubleClick="MouseDoubleClickHandler" 
-                  MouseDown="SaveCurrentGadgetHandler"
+                  MouseDoubleClick="MouseDoubleClickHandler"
                  />
-
     </DockPanel>
 </UserControl>
