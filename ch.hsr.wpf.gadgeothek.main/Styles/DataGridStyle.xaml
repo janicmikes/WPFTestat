@@ -18,6 +18,18 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="LightSkyBlue"/>
             </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="DodgerBlue"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style  TargetType="{x:Type DataGridCell}">
+        <Style.Triggers>
+            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                <Setter Property="Background" Value="DodgerBlue" />
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
 
