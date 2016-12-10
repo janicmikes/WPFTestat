@@ -16,6 +16,8 @@
         <Style TargetType="Label">
             <Setter Property="Margin" Value="10,5" />
             <Setter Property="Width" Value="80"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14" />
             <Setter Property="DockPanel.Dock" Value="Left" />
         </Style>
         <Style TargetType="TextBox">
@@ -24,10 +26,8 @@
         <Style TargetType="ComboBox">
             <Setter Property="Margin" Value="10" />
         </Style>
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="5, 5,10,5" />
+        <Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
             <Setter Property="Width" Value="80" />
-            <Setter Property="Padding" Value="2" />
         </Style>
         <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
                             ObjectType="{x:Type System:Enum}">

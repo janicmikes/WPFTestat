@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.main"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/DataGridStyle.xaml" />
+                <ResourceDictionary Source="Styles/ButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
