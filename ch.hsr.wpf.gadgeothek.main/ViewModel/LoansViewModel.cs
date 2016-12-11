@@ -13,7 +13,7 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
     {
 
         public GadgeothekApp GadgeothekApp;
-        private ObservableCollection<Loan> AllLoans { get; set; } = new ObservableCollection<Loan>();
+        public ObservableCollection<Loan> AllLoans { get; set; } = new ObservableCollection<Loan>();
 
         public LoansViewModel()
         {
