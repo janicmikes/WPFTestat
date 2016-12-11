@@ -35,6 +35,10 @@ namespace ch.hsr.wpf.gadgeothek.main
             GadgetListView.GadgetListViewModel.GadgeothekApp = GadgeothekApp;
             GadgetListView.GadgetListViewModel.PullGadgetList();
 
+            
+
+            ReservationsView.ReservationsViewModel.GadgeothekApp = GadgeothekApp;
+            ReservationsView.ReservationsViewModel.PullReservationsList();
         }
 
         private void AboutUsMenuItem_Click(object sender, RoutedEventArgs e)
