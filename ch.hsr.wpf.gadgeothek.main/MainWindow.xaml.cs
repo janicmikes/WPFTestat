@@ -36,6 +36,7 @@ namespace ch.hsr.wpf.gadgeothek.main
             GadgetListView.GadgetListViewModel.PullGadgetList();
 
             LoansView.LoansViewModel.GadgeothekApp = GadgeothekApp;
+            LoansView.LoansViewModel.PullLoansList();
         }
 
         private void AboutUsMenuItem_Click(object sender, RoutedEventArgs e)

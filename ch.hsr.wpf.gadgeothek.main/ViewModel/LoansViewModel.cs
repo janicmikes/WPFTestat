@@ -34,7 +34,7 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
             PullLoansList();
         }
 
-        private void PullLoansList()
+        public void PullLoansList()
         {
             AllLoans.Clear();
             foreach (var loan in GadgeothekApp.GetAllLoans())
