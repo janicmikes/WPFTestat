@@ -59,6 +59,7 @@ namespace ch.hsr.wpf.gadgeothek.main
                 {
                     GadgeothekApp.ServerUrl = serverConnectDialog.Answer;
                     GadgeothekApp.Service = new LibraryAdminService(GadgeothekApp.ServerUrl);
+                    GadgeothekApp.GadgetListViewModel.PullGadgetList();
                 }
             }
         }
