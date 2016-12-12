@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ch.hsr.wpf.gadgeothek.main.GadgetListView"
+﻿<UserControl x:Class="ch.hsr.wpf.gadgeothek.main.ReservationsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,20 +6,14 @@
              mc:Ignorable="d"
              xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.main" d:DesignWidth="351.182" d:DesignHeight="183.171">
     <DockPanel LastChildFill="True">
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-            <Button Click="ButtonAddNewGadget_Click" Content="Add new Gadget" />
-            <Button Click="ButtonDeleteGadget_Click" Content="Delete Gadget" />
-        </StackPanel>
-
         <DataGrid x:Name="dataGridView" 
-                  ItemsSource="{Binding AllGadgets}" 
+                  ItemsSource="{Binding AllReservations}" 
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto"
                   HorizontalContentAlignment="Stretch"
                   IsReadOnly="True" 
-                  SelectionMode="Single"
-                  MouseDoubleClick="MouseDoubleClickHandler"
-                 />
+                  SelectionMode="Single"/>
+
     </DockPanel>
 </UserControl>

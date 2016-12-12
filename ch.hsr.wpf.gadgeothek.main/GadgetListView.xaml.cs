@@ -27,7 +27,6 @@ namespace ch.hsr.wpf.gadgeothek.main
         //public static String ServerUrl { get; set; } = ConfigurationManager.AppSettings["server"].ToString();
 
 
-        private Gadget _currentGadget;
         //private readonly LibraryAdminService _service = new LibraryAdminService(ServerUrl);
 
         public GadgetListViewModel GadgetListViewModel;
@@ -47,14 +46,13 @@ namespace ch.hsr.wpf.gadgeothek.main
         }
         private void ButtonDeleteGadget_Click(object sender, RoutedEventArgs e)
         {
-            if (_currentGadget == null)
+            Gadget selectedGadget = (Gadget)dataGridView.SelectedItem;
+            if (selectedGadget == null)
             {
                 MessageBox.Show("Please first select a gadget");
                 return;
             }
-            GadgetListViewModel.DeleteGadget(_currentGadget);
-
-            _currentGadget = null;
+            GadgetListViewModel.DeleteGadget(selectedGadget);
         }
 
         private void MouseDoubleClickHandler(object sender, MouseButtonEventArgs e)
@@ -62,10 +60,5 @@ namespace ch.hsr.wpf.gadgeothek.main
             GadgetListViewModel.ShowSingleGadget((Gadget)((DataGrid)sender).SelectedItem);
         }
 
-
-        private void SaveCurrentGadgetHandler(object sender, RoutedEventArgs e)
-        {
-            _currentGadget = (Gadget) ((DataGrid) sender).SelectedItem;
-        }
     }
 }
