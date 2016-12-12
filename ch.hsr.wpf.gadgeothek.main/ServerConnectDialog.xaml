@@ -22,8 +22,8 @@
         <Label Name="lblQuestion" Grid.Column="1" Content="Please enter the URL of your Gadgeothek Server" />
         <TextBox Name="TextBoxServerUrl" Grid.Column="1" Grid.Row="1" MinWidth="250" Text="http://mge2.dev.ifs.hsr.ch" BorderThickness="1"/> 
         <WrapPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,0,0">
-            <Button IsDefault="True" Name="ButtonConnect" MinWidth="60" Margin="0,0,10,0" Click="ButtonConnect_Click">_Connect</Button>
-            <Button IsCancel="True" Name="ButtonCancel" MinWidth="60">_Cancel</Button>
+            <Button IsDefault="True" Name="ButtonConnect" Click="ButtonConnect_Click">_Connect</Button>
+            <Button IsCancel="True" Name="ButtonCancel" >_Cancel</Button>
         </WrapPanel>
     </Grid>
 </Window>
