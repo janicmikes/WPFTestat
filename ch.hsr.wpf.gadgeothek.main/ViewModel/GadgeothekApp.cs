@@ -29,5 +29,6 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
 
         public List<Gadget> GetAllGadgets() => Service.GetAllGadgets();
         public List<Loan> GetAllLoans() => Service.GetAllLoans();
+        public List<Reservation> GetAllReservations() => Service.GetAllReservations();
     }
 }
