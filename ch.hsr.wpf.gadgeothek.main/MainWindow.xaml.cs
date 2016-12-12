@@ -42,6 +42,8 @@ namespace ch.hsr.wpf.gadgeothek.main
             GadgeothekApp.ReservationsViewModel = ReservationsView.ReservationsViewModel;
             ReservationsView.ReservationsViewModel.GadgeothekApp = GadgeothekApp;
             ReservationsView.ReservationsViewModel.PullReservationsList();
+
+            StatusBarServerUrl.Text = GadgeothekApp.ServerUrl;
         }
 
         private void AboutUsMenuItem_Click(object sender, RoutedEventArgs e)
@@ -60,6 +62,10 @@ namespace ch.hsr.wpf.gadgeothek.main
                     GadgeothekApp.ServerUrl = serverConnectDialog.Answer;
                     GadgeothekApp.Service = new LibraryAdminService(GadgeothekApp.ServerUrl);
                     GadgeothekApp.GadgetListViewModel.PullGadgetList();
+                    GadgeothekApp.LoansViewModel.PullLoansList();
+                    GadgeothekApp.ReservationsViewModel.PullReservationsList();
+
+                    StatusBarServerUrl.Text = GadgeothekApp.ServerUrl;
                 }
             }
         }
