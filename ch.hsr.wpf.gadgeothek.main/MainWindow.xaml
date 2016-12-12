@@ -51,6 +51,10 @@
             <TabItem Header="Loans">
                 <local:LoansView x:Name="LoansView" />
             </TabItem>
+
+            <TabItem Header="Reservations">
+                <local:ReservationsView x:Name="ReservationsView" />
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>

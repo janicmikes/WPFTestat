@@ -13,7 +13,7 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
     {
 
         public GadgeothekApp GadgeothekApp;
-        private ObservableCollection<Loan> AllLoans { get; set; } = new ObservableCollection<Loan>();
+        public ObservableCollection<Loan> AllLoans { get; set; } = new ObservableCollection<Loan>();
 
         public LoansViewModel()
         {
@@ -31,17 +31,16 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
 
         private void UpdateLoanTimerOnTick(object sender, EventArgs e)
         {
-            AllLoans.Clear();
             PullLoansList();
         }
 
-        private void PullLoansList()
+        public void PullLoansList()
         {
-          /*  var allLoans = GadgeothekApp.GetAllLoans();
-            foreach (var loan in allLoans)
+            AllLoans.Clear();
+            foreach (var loan in GadgeothekApp.GetAllLoans())
             {
-                allLoans.Add(loan);
-            }*/
+                AllLoans.Add(loan);
+            }
         }
     }
 }

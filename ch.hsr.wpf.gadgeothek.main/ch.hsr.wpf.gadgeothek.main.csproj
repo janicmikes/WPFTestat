@@ -71,6 +71,9 @@
     <Compile Include="GadgetListView.xaml.cs">
       <DependentUpon>GadgetListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReservationsView.xaml.cs">
+      <DependentUpon>ReservationsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoansView.xaml.cs">
       <DependentUpon>LoansView.xaml</DependentUpon>
     </Compile>
@@ -81,6 +84,7 @@
       <DependentUpon>SingleGadgetWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\GadgeothekApp.cs" />
+    <Compile Include="ViewModel\ReservationsViewModel.cs" />
     <Compile Include="ViewModel\LoansViewModel.cs" />
     <Compile Include="ViewModel\GadgetListViewModel.cs" />
     <Page Include="DeleteConfirmation.xaml">
@@ -88,6 +92,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GadgetListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReservationsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
