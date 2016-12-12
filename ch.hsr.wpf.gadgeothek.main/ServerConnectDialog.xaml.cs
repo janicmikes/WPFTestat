@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ch.hsr.wpf.gadgeothek.main.ViewModel;
 
 namespace ch.hsr.wpf.gadgeothek.main
 {
@@ -18,11 +19,10 @@ namespace ch.hsr.wpf.gadgeothek.main
     /// </summary>
     public partial class ServerConnectDialog : Window
     {
-        String ServerUrl;
-
-        public ServerConnectDialog()
+        public ServerConnectDialog(String serverUrl)
         {
             InitializeComponent();
+            TextBoxServerUrl.Text = serverUrl;
         }
 
         public string Answer

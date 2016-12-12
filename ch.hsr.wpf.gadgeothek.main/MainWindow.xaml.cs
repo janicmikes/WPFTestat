@@ -52,7 +52,7 @@ namespace ch.hsr.wpf.gadgeothek.main
 
         private void ConnectToServerMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            ServerConnectDialog serverConnectDialog = new ServerConnectDialog();
+            ServerConnectDialog serverConnectDialog = new ServerConnectDialog(GadgeothekApp.ServerUrl);
             if (serverConnectDialog.ShowDialog() == true)
             {
                 if (GadgeothekApp.ServerUrl != serverConnectDialog.Answer)
