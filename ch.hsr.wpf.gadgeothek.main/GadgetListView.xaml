@@ -20,7 +20,6 @@
                   IsReadOnly="True" 
                   SelectionMode="Single"
                   MouseDoubleClick="MouseDoubleClickHandler"
-                  MouseDown="SaveCurrentGadgetHandler"
                  />
     </DockPanel>
 </UserControl>
