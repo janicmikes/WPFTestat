@@ -17,21 +17,6 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
 
         public LoansViewModel()
         {
-            UpdateLoanTimer(UpdateLoanTimerOnTick);
-        }
-
-        private void UpdateLoanTimer(EventHandler updateLoanTimerOnTick)
-        {
-            System.Windows.Threading.DispatcherTimer updateLoanTimer = new System.Windows.Threading.DispatcherTimer();
-            updateLoanTimer.Tick += updateLoanTimerOnTick;
-            updateLoanTimer.Interval = new TimeSpan(0, 0, 5);
-            updateLoanTimer.Start();
-        }
-
-
-        private void UpdateLoanTimerOnTick(object sender, EventArgs e)
-        {
-            PullLoansList();
         }
 
         public void PullLoansList()

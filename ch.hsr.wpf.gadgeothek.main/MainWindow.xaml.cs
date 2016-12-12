@@ -35,9 +35,11 @@ namespace ch.hsr.wpf.gadgeothek.main
             GadgetListView.GadgetListViewModel.GadgeothekApp = GadgeothekApp;
             GadgetListView.GadgetListViewModel.PullGadgetList();
 
+            GadgeothekApp.LoansViewModel = LoansView.LoansViewModel;
             LoansView.LoansViewModel.GadgeothekApp = GadgeothekApp;
             LoansView.LoansViewModel.PullLoansList();
 
+            GadgeothekApp.ReservationsViewModel = ReservationsView.ReservationsViewModel;
             ReservationsView.ReservationsViewModel.GadgeothekApp = GadgeothekApp;
             ReservationsView.ReservationsViewModel.PullReservationsList();
         }

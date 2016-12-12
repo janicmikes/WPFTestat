@@ -17,21 +17,6 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
 
         public ReservationsViewModel()
         {
-            UpdateReservationTimer(UpdateReservationTimerOnTick);
-        }
-
-        private void UpdateReservationTimer(EventHandler updateReservationTimerOnTick)
-        {
-            System.Windows.Threading.DispatcherTimer updateReservationTimer = new System.Windows.Threading.DispatcherTimer();
-            updateReservationTimer.Tick += updateReservationTimerOnTick;
-            updateReservationTimer.Interval = new TimeSpan(0, 0, 5);
-            updateReservationTimer.Start();
-        }
-
-
-        private void UpdateReservationTimerOnTick(object sender, EventArgs e)
-        {
-            PullReservationsList();
         }
 
         public void PullReservationsList()
