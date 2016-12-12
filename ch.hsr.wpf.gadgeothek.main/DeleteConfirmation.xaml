@@ -1,0 +1,19 @@
+﻿<Window x:Class="ch.hsr.wpf.gadgeothek.main.DeleteConfirmation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.main"
+        mc:Ignorable="d"
+        Title="Delete" Height="150" Width="220">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+            <Button x:Name="BtnDelete"  Content="Delete" IsDefault="True" Click="BtnDelete_OnClick"/>
+            <Button x:Name="BtnCancel" Content="Cancel" IsCancel="True"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <TextBox BorderThickness="0" Padding="17,25,2,2" VerticalAlignment="Center" Text="Sure delete this item?"/>
+            <TextBox x:Name="txtGadget" BorderThickness="0"  Padding="17,2,2,2" VerticalAlignment="Center"  Text="{Binding Name}"/>
+        </StackPanel>
+    </DockPanel>
+</Window>

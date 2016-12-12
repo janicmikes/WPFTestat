@@ -120,8 +120,8 @@ namespace ch.hsr.wpf.gadgeothek.main.ViewModel
 
         public void DeleteGadget(Gadget gadget)
         {
-            DialogResult dialogResult = MessageBox.Show("delete the gadget:  " + gadget.Name, "Delete Gadget", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            DeleteConfirmation deleteConfirmation = new DeleteConfirmation(gadget);
+            if (deleteConfirmation.ShowDialog() == true)
             {
                 try
                 {
